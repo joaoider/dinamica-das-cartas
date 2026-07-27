@@ -11,8 +11,8 @@ const rooms = new Map();
 app.get("/logo.png", (_request, response) => {
   response.sendFile(path.join(__dirname, "logo.png"));
 });
-app.get("/Mario-Araripe.jpeg", (_request, response) => {
-  response.sendFile(path.join(__dirname, "Mario-Araripe.jpeg"));
+app.get("/turbina.webp", (_request, response) => {
+  response.sendFile(path.join(__dirname, "turbina.webp"));
 });
 app.use(express.static(path.join(__dirname, "public")));
 
