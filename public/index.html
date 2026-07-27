@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Custos Invisíveis — Dinâmica</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="brand.css">
+  <style>.card{grid-template-columns:28px 48px 1fr auto}.card [data-move]{padding:5px 9px;background:#eaf2ef;color:#075f5a}@media(max-width:700px){.card{grid-template-columns:24px 34px 1fr}.card>span:last-child{grid-column:3;justify-self:end}}</style>
+</head>
+<body>
+  <header class="brand-header">
+    <a class="brand" href="https://casadosventos.com.br/" target="_blank" rel="noreferrer" aria-label="Casa dos Ventos">
+      <span class="brand-logo"><img src="/logo.png" alt="Casa dos Ventos — associada à TotalEnergies"></span>
+    </a>
+    <span class="product-name">Dinâmica de desenvolvimento <b>01</b></span>
+  </header>
+  <main>
+    <section id="home" class="panel narrow">
+      <p class="eyebrow"><span>01</span> DINÂMICA ONLINE</p>
+      <h1 id="access-title">Os custos <em>invisíveis</em> do não desenvolvimento</h1>
+      <p id="access-description">Crie uma sala para facilitar a dinâmica e compartilhe o link gerado com os participantes.</p>
+      <figure class="founder-quote">
+        <img src="/Mario-Araripe.jpeg" alt="Mário Araripe">
+        <figcaption>
+          <blockquote>“É da nossa <em>natureza</em> essa energia inesgotável.”</blockquote>
+          <strong>Mário Araripe</strong>
+          <span>Fundador da Casa dos Ventos</span>
+        </figcaption>
+      </figure>
+      <label>Seu nome<input id="name" maxlength="40" placeholder="Como devemos chamar você?"></label>
+      <div id="creator-entry" class="actions"><button id="create">Criar sala</button></div>
+      <div id="participant-entry" class="join hidden"><input id="code" maxlength="5" placeholder="CÓDIGO"><button id="join">Entrar na sala</button></div>
+      <p id="home-error" class="error"></p>
+    </section>
+
+    <section id="app" class="hidden">
+      <div class="roombar"><div>Sala <strong id="room-code"></strong> <button id="copy" class="link">copiar link</button></div><div><span id="count">0</span> pessoa(s)</div></div>
+      <section id="lobby" class="panel hidden">
+        <p class="eyebrow">AGUARDANDO O GRUPO</p><h2>Todos prontos?</h2>
+        <p>Compartilhe o código ou o link da sala. A atividade começa quando o facilitador liberar.</p>
+        <div id="people" class="chips"></div>
+        <button id="start" class="host-only">Começar ordenação</button>
+        <p class="guest-only waiting">Aguarde o facilitador iniciar…</p>
+      </section>
+
+      <section id="ranking" class="hidden">
+        <div class="intro"><div><p class="eyebrow">ETAPA INDIVIDUAL</p><h2>Ordene as cartas</h2></div><p>Arraste da mais crítica para a menos crítica. Depois, confirme sua escolha.</p></div>
+        <div id="cards" class="cards"></div>
+        <div class="submitbar"><span id="progress"></span><button id="submit">Enviar minha ordem</button><button id="show-results" class="host-only secondary hidden">Exibir resultado</button></div>
+      </section>
+
+      <section id="results" class="hidden">
+        <div class="intro"><div><p class="eyebrow">RESULTADO DO GRUPO</p><h2>Ranking coletivo</h2></div><p>Pontuação ponderada: 10 pontos para o 1º lugar, até 1 ponto para o 10º.</p></div>
+        <div id="result-list" class="results"></div>
+        <div class="individual-heading"><div><p class="eyebrow">VOTOS INDIVIDUAIS</p><h2>Sequência de cada participante</h2></div><p>Veja como cada pessoa ordenou as cartas, da mais crítica para a menos crítica.</p></div>
+        <div id="individual-results" class="individual-results"></div>
+        <div class="panel questions"><h2>Discussão</h2><div class="question-grid"><p><b>01</b> Qual carta foi eleita o custo mais crítico?</p><p><b>02</b> Onde tivemos maior divergência?</p><p><b>03</b> Qual consequência é mais subestimada?</p><p><b>04</b> Quais custos já impactam nossa organização?</p></div></div>
+      </section>
+
+      <section id="completed" class="panel narrow hidden">
+        <p class="eyebrow">FINALIZADO</p>
+        <h2>Exercício concluído</h2>
+        <p>Suas respostas foram registradas. Acompanhe a discussão conduzida pelo facilitador.</p>
+        <div class="own-result">
+          <h3>Sua sequência</h3>
+          <p class="own-result-help">Da carta mais crítica para a menos crítica:</p>
+          <ol id="own-result-list"></ol>
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer class="brand-footer"><span>Casa dos Ventos</span><strong>É da nossa natureza essa energia inesgotável.</strong></footer>
+  <div id="toast"></div>
+  <script src="/socket.io/socket.io.js"></script><script src="app.js"></script>
+</body>
+</html>
