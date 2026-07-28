@@ -8,7 +8,7 @@ const cards = [
   "Os líderes mais técnicos têm dificuldade para desenvolver outras pessoas e acabam virando gargalos.",
   "As mudanças acontecem, mas a cultura não acompanha a velocidade do negócio.",
   "Sem feedback de qualidade, talentos crescem mais devagar e erros se repetem.",
-  "Sem feedback de qualidade, talentos crescem mais devagar e erros se repetem."
+  "O custo invisível da liderança ruim aparece em produtividade, inovação, engajamento e retenção, antes de aparecer nos indicadores."
 ];
 const socket = io();
 const $ = id => document.getElementById(id);
